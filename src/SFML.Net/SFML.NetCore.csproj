@@ -3,14 +3,14 @@
   <Import Project="..\..\SFML.NuGet.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>SFML.Net</PackageId>
+    <TargetFrameworks>net7.0</TargetFrameworks>
+    <PackageId>SFML.NetCore</PackageId>
     <Description>
       A simple, fast, cross-platform and object-oriented multimedia API. It provides access to windowing, graphics, audio and network.
 
       This is a meta-package that includes all SFML modules.
     </Description>
-    <Title>SFML.Net</Title>
+    <Title>SFML.NetCore</Title>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
   </PropertyGroup>

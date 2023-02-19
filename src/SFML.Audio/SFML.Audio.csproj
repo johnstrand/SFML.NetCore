@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net7.0</TargetFrameworks>
     <SFMLModule>Audio</SFMLModule>
   </PropertyGroup>
 
@@ -11,6 +11,10 @@
     <ProjectReference Include="..\SFML.Graphics\SFML.Graphics.csproj" />
     <ProjectReference Include="..\SFML.System\SFML.System.csproj" />
     <ProjectReference Include="..\SFML.Window\SFML.Window.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="CSFML" Version="2.5.0" />
   </ItemGroup>
 
 </Project>

@@ -1,49 +1,69 @@
 using System;
 
-namespace SFML.Graphics
+namespace SFML.Graphics;
+
+////////////////////////////////////////////////////////////
+/// <summary>
+/// <para>Types of primitives that a VertexArray can render.</para>
+/// <para>
+/// Points and lines have no area, therefore their thickness
+/// will always be 1 pixel, regardless the current transform
+/// and view.
+/// </para>
+/// </summary>
+////////////////////////////////////////////////////////////
+public enum PrimitiveType
 {
-    ////////////////////////////////////////////////////////////
     /// <summary>
-    /// Types of primitives that a VertexArray can render.
-    ///
-    /// Points and lines have no area, therefore their thickness
-    /// will always be 1 pixel, regardless the current transform
-    /// and view.
+    /// List of individual points
     /// </summary>
-    ////////////////////////////////////////////////////////////
-    public enum PrimitiveType
-    {
-        /// List of individual points
-        Points,
+    Points,
 
-        /// List of individual lines
-        Lines,
+    /// <summary>
+    /// List of individual lines
+    /// </summary>
+    Lines,
 
-        /// List of connected lines, a point uses the previous point to form a line
-        LineStrip,
+    /// <summary>
+    /// List of connected lines, a point uses the previous point to form a line
+    /// </summary>
+    LineStrip,
 
-        /// List of individual triangles
-        Triangles,
+    /// <summary>
+    /// List of connected lines, a point uses the previous point to form a line
+    /// </summary>
+    [Obsolete("LinesStrip is deprecated, please use LineStrip")]
+    LinesStrip = LineStrip,
 
-        /// List of connected triangles, a point uses the two previous points to form a triangle
-        TriangleStrip,
+    /// <summary>
+    /// List of individual triangles
+    /// </summary>
+    Triangles,
 
-        /// List of connected triangles, a point uses the common center and the previous point to form a triangle
-        TriangleFan,
+    /// <summary>
+    /// List of connected triangles, a point uses the two previous points to form a triangle
+    /// </summary>
+    TriangleStrip,
 
-        /// List of individual quads
-        Quads,
+    /// <summary>
+    /// List of connected triangles, a point uses the two previous points to form a triangle
+    /// </summary>
+    [Obsolete("TrianglesStrip is deprecated, please use TriangleStrip")]
+    TrianglesStrip = TriangleStrip,
 
-        /// List of connected lines, a point uses the previous point to form a line
-        [Obsolete("LinesStrip is deprecated, please use LineStrip")]
-        LinesStrip = LineStrip,
+    /// <summary>
+    /// List of connected triangles, a point uses the common center and the previous point to form a triangle
+    /// </summary>
+    TriangleFan,
 
-        /// List of connected triangles, a point uses the two previous points to form a triangle
-        [Obsolete("TrianglesStrip is deprecated, please use TriangleStrip")]
-        TrianglesStrip = TriangleStrip,
+    /// <summary>
+    /// List of connected triangles, a point uses the common center and the previous point to form a triangle
+    /// </summary>
+    [Obsolete("TrianglesFan is deprecated, please use TriangleFan")]
+    TrianglesFan = TriangleFan,
 
-        /// List of connected triangles, a point uses the common center and the previous point to form a triangle
-        [Obsolete("TrianglesFan is deprecated, please use TriangleFan")]
-        TrianglesFan = TriangleFan,
-    }
+    /// <summary>
+    /// List of individual quads
+    /// </summary>
+    Quads,
 }
